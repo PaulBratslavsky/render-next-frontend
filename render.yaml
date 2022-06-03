@@ -1,10 +1,13 @@
+services:
 - type: web
-  name: render-deploy-next
+  name: render-next-frontend
   env: static
+  plan: free
+  repo: https://github.com/PaulBratslavsky/render-next-frontend
+
   buildCommand: yarn; yarn build; yarn next export
   staticPublishPath: out
-  pullRequestPreviewsEnabled: true     # optional
-
+  pullRequestPreviewsEnabled: true
   envVars:
   - key: NODE_ENV
     value: production
