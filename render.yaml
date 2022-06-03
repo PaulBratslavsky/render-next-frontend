@@ -2,7 +2,6 @@ services:
 - type: web
   name: render-next-frontend
   env: static
-  plan: free
   repo: https://github.com/PaulBratslavsky/render-next-frontend
 
   buildCommand: yarn; yarn build; yarn next export
