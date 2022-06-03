@@ -63,7 +63,7 @@ export default function Home({ posts }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch(process.env.STRAPI_URL_BASE || "http://localhost:1337/api/posts?populate=*");
+  const res = await fetch(process.env.STRAPI_URL_BASE + "/api/posts?populate=*" || "http://localhost:1337/api/posts?populate=*");
   const posts = await res.json();
 
   console.log(posts);
