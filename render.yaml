@@ -2,7 +2,6 @@ services:
 - type: web
   name: nextjs-static
   env: static
-  plan: free
   repo: https://github.com/PaulBratslavsky/render-next-frontend
 
   buildCommand: yarn; yarn build; yarn next export
