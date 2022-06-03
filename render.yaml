@@ -1,14 +1,23 @@
 services:
 - type: web
-  name: render-next-frontend
-  env: static
+  name: next-js
+  env: node
   repo: https://github.com/PaulBratslavsky/render-next-frontend
-
-  buildCommand: yarn; yarn build; yarn next export
-  staticPublishPath: out
-  pullRequestPreviewsEnabled: true
+  plan: starter
+  buildCommand: yarn; yarn build
+  startCommand: yarn start
   envVars:
   - key: NODE_ENV
     value: production
   - key: STRAPI_URL_BASE
     sync: false
+# Uncomment the following to deploy this app as a static site on render
+# - type: web
+#   name: nextjs-static
+#   env: static
+#   buildCommand: yarn; yarn build; yarn next export
+#   staticPublishPath: out
+#   pullRequestPreviewsEnabled: true     # optional
+#   envVars:
+#   - key: NODE_ENV
+#     value: production
