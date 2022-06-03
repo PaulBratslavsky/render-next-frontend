@@ -1,18 +1,10 @@
 services:
 - type: web
-  name: render-next-frontend
-  env: node
-  plan: free
-  repo: https://github.com/PaulBratslavsky/render-next-frontend
-  buildCommand: yarn; yarn build
-  startCommand: yarn start
-  envVars:
-  - key: NODE_ENV
-    value: production
-
-- type: web
   name: nextjs-static
   env: static
+  plan: free
+  repo: https://github.com/PaulBratslavsky/render-next-frontend
+
   buildCommand: yarn; yarn build; yarn next export
   staticPublishPath: out
   pullRequestPreviewsEnabled: true
