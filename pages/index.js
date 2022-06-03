@@ -2,6 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
+const myLoader = ({ src, width, quality }) => {
+  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+}
+
 export default function Home({ posts }) {
   function showAllPosts(posts) {
     return posts.data.map((post) => {
